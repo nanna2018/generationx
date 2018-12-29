@@ -1,33 +1,37 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Tramite index{% endblock %}
+{% block stylesheets %}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="{{ asset('build/tramite.css') }}">
+            
+{% endblock %}
 
 {% block body %}
-    <h1>Tramite index</h1>
+    <h1>Trámites</h1>
+<div class="container">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for tramite in tramites %}
-            <tr>
-                <td>{{ tramite.id }}</td>
-                <td>
-                    <a href="{{ path('tramite_show', {'id': tramite.id}) }}">show</a>
-                    <a href="{{ path('tramite_edit', {'id': tramite.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="2">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+  <div class="card-group" style="margin-top:20px;">
+    <div class="col-md-6 ">
+        <div class="card border-danger  mb-2" style="max-width: 18rem;">
+  			<center><div class="card-header">AYUNTAMIENTO</div></center>
+  			    <a href="http://www.alburquerque.es/plantilla.php?enlace=tramites"><img src='{{ asset('imagenes/ayto.jpg')}}'height="130px"width="100%"></a>
+				 
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card border-danger mb-2" style="max-width: 18rem;">
+  			<center><div class="card-header">SEGURIDAD SOCIAL</div></center>
+  			    <a href="http://www.seg-social.es/wps/portal/wss/internet/Inicio/nUtil/44539"><img src='{{ asset('imagenes/ss.jpg')}}'height="130px"width="100%";></a>
+				  
+			
+        </div>
+    </div>
+    </div>
+    </div>
+   
 
-    <a href="{{ path('tramite_new') }}">Create new</a>
+    <!--<a href="{{ path('tramite_new') }}">Create new</a>-->
 {% endblock %}

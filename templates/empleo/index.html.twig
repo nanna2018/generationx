@@ -1,33 +1,39 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Empleo index{% endblock %}
+{% block stylesheets %}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="{{ asset('build/empleo.css') }}">
+            
+{% endblock %}
+
 
 {% block body %}
-    <h1>Empleo index</h1>
+    <h1>Empleo</h1>
+    <div class="container">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for empleo in empleos %}
-            <tr>
-                <td>{{ empleo.id }}</td>
-                <td>
-                    <a href="{{ path('empleo_show', {'id': empleo.id}) }}">show</a>
-                    <a href="{{ path('empleo_edit', {'id': empleo.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="2">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+  <div class="card-group" style="margin-top:20px;">
+    <div class="col-md-6 ">
+        <div class="card border-danger  mb-2" style="max-width: 18rem;">
+  			<center><div class="card-header">SEPE</div></center>
+  			    <a href="http://www.sepe.es/direccionesytelefonosWeb/ActionBuscarDireccionesytelefonosId.do?id=10600610"><img src='{{ asset('imagenes/sepe.jpeg')}}'height="130px"width="100%"></a>
+				 
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card border-danger mb-2" style="max-width: 18rem;">
+  			<center><div class="card-header">AGENCIA DE DESARROLLO</div></center>
+  			    <a href="https://www.facebook.com/AgenciaDeDesarrolloLocalDeAlburquerque"><img id="escudo" src='{{ asset('imagenes/ad.jpeg')}}'height="130px"width="50%";></a>
+				  
+			
+        </div>
+    </div>
+    </div>
+    </div>
 
-    <a href="{{ path('empleo_new') }}">Create new</a>
+    
+
+    
 {% endblock %}

@@ -1,23 +1,51 @@
+
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello {{ controller_name }}!{% endblock %}
+{% block title %}Vecino{% endblock %}
 
 {% block body %}
-<!--<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style> -->
+  <div class="container">
 
-<!--<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+  <div class="card-group" style="margin-top:20px;">
+    <div class="col-md-3 ">
+        <div class="card border-primary  mb-2" style="max-width: 18rem;">
+  			<center><div class="card-header">SALUD</div></center>
+  			    <a href="https://saludextremadura.ses.es/web/"><img src='{{ asset('imagenes/la-salud.jpg')}}'height="130px";></a>
+				 
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card border-danger mb-2" style="max-width: 18rem;">
+  			<center><div class="card-header">TRÁMITES</div></center>
+  			    <a href="{{ path('tramite_index') }}"><img src='{{ asset('imagenes/tramites.jpg')}}'height="130px";></a>
+				  
+			
+        </div>
+    </div>
+    <div class="col-md-3">
+  	    <div class="card border-success mb-2" style="max-width: 18rem;">
+  			<center><div class="card-header">EMPLEO</div></center>
+  				 <a href="{{ path('empleo_index') }}"><img src='{{ asset('imagenes/empleo.jpg')}}'height="130px"width="100%";></a>
+				  
+        </div>
+    </div>
+    <div class="col-md-3">
+  	    <div class="card border-warning mb-3" style="max-width: 18rem;">
+  			<center><div class="card-header">DEPORTE</div></center>
+             <a href="{{ path('deporte_index') }}"><img src='{{ asset('imagenes/deporte.jpg')}}'height="130px" width="100%";></a>
+				  
+			
+        </div>
+    </div>
+  </div>
+</div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'src/Controller/MainController.php'|file_link(0) }}">src/Controller/MainController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'templates/main/index.html.twig'|file_link(0) }}">templates/main/index.html.twig</a></code></li>
-    </ul>
-</div> -->
 
 
+
+<div class="col-md-9">
+</div>
 {% endblock %}
+
+
 

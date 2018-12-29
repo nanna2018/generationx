@@ -16,4 +16,14 @@ class MainController extends AbstractController
             'controller_name' => 'MainController',
         ]);
     }
+    /**
+     * @Route("/inicio", name="main_inicio")
+     */
+    public function inicio()
+    {
+        return $this->render('main/inicio.html.twig', [
+            'controller_name' => 'MainController',
+        ]);
+    }
+
 }
